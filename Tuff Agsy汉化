@@ -76,7 +76,7 @@ local Translations = {
 ["Speed"] = "速度",
 ["Enable Speed"] = "启用速度",
 ["穿墙"] = "穿墙",
-["Inf Jump"] = "无限跳跃",
+["Inf Jump"] = "无限跳跃"
 }
 
 local function translateText(text)
