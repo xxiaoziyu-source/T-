@@ -91,99 +91,117 @@ local Translations = {
     ["Rejoin current server and auto-run script at teleport"] = "重连当前服务器并在传送时自动运行脚本"
 }
 
+-- 修复1：按“长文本→短文本”排序翻译，避免短文本覆盖长文本（如先译“Desync (Need 7 rebirths)\nV keybind”再译“Desync”）
 local function translateText(text)
     if not text or type(text) ~= "string" then return text end
-    
+    -- 优先完整匹配
     if Translations[text] then
         return Translations[text]
     end
-    
-    for en, cn in pairs(Translations) do
-        if text:find(en) then
-            return text:gsub(en, cn)
+    -- 提取所有翻译键并按长度降序排序
+    local sortedKeys = {}
+    for en in pairs(Translations) do
+        table.insert(sortedKeys, en)
+    end
+    table.sort(sortedKeys, function(a, b)
+        return string.len(a) > string.len(b)
+    end)
+    -- 按排序后的键执行替换
+    local result = text
+    for _, en in ipairs(sortedKeys) do
+        local cn = Translations[en]
+        if string.find(result, en) then
+            result = string.gsub(result, en, cn)
         end
     end
-    
-    return text
+    return result
 end
 
+-- 修复2：拆分pcall范围，精准定位错误；移除无用延迟，优化性能
 local function setupTranslationEngine()
-    local success, err = pcall(function()
+    -- 元表劫持单独包裹pcall，不影响后续备用逻辑
+    local metaSuccess, metaErr = pcall(function()
         local oldIndex = getrawmetatable(game).__newindex
         setreadonly(getrawmetatable(game), false)
-        
+        -- 增加Instance类型校验，避免非法参数崩溃
         getrawmetatable(game).__newindex = newcclosure(function(t, k, v)
-            if (t:IsA("TextLabel") or t:IsA("TextButton") or t:IsA("TextBox")) and k == "Text" then
+            if typeof(t) == "Instance" and (t:IsA("TextLabel") or t:IsA("TextButton") or t:IsA("TextBox")) and k == "Text" then
                 v = translateText(tostring(v))
             end
             return oldIndex(t, k, v)
         end)
-        
         setreadonly(getrawmetatable(game), true)
     end)
-    
-    if not success then
-        warn("元表劫持失败:", err)
-       
-        local translated = {}
-        local function scanAndTranslate()
+    if not metaSuccess then
+        warn("元表劫持失败:", metaErr)
+    end
+
+    local translated = {}
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+
+    -- 扫描翻译逻辑
+    local function scanAndTranslate()
+        -- 扫描CoreGui
+        pcall(function()
             for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
                 if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
-                    pcall(function()
-                        local text = gui.Text
-                        if text and text ~= "" then
-                            local translatedText = translateText(text)
-                            if translatedText ~= text then
-                                gui.Text = translatedText
-                                translated[gui] = true
-                            end
+                    local text = gui.Text
+                    if text and text ~= "" then
+                        local transText = translateText(text)
+                        if transText ~= text then
+                            gui.Text = transText
+                            translated[gui] = true
                         end
-                    end)
-                end
-            end
-            
-            local player = game:GetService("Players").LocalPlayer
-            if player and player:FindFirstChild("PlayerGui") then
-                for _, gui in ipairs(player.PlayerGui:GetDescendants()) do
-                    if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
-                        pcall(function()
-                            local text = gui.Text
-                            if text and text ~= "" then
-                                local translatedText = translateText(text)
-                                if translatedText ~= text then
-                                    gui.Text = translatedText
-                                    translated[gui] = true
-                                end
-                            end
-                        end)
                     end
                 end
             end
-        end
-        
-        local function setupDescendantListener(parent)
-            parent.DescendantAdded:Connect(function(descendant)
-                if descendant:IsA("TextLabel") or descendant:IsA("TextButton") or descendant:IsA("TextBox") then
-                    task.wait(0.1)
-                    pcall(function()
-                        local text = descendant.Text
+        end)
+        -- 扫描PlayerGui（需确认玩家存在）
+        if LocalPlayer and LocalPlayer:FindFirstChild("PlayerGui") then
+            pcall(function()
+                for _, gui in ipairs(LocalPlayer.PlayerGui:GetDescendants()) do
+                    if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                        local text = gui.Text
                         if text and text ~= "" then
-                            local translatedText = translateText(text)
-                            if translatedText ~= text then
-                                descendant.Text = translatedText
+                            local transText = translateText(text)
+                            if transText ~= text then
+                                gui.Text = transText
+                                translated[gui] = true
                             end
                         end
-                    end)
+                    end
                 end
             end)
         end
-        
-        pcall(setupDescendantListener, game:GetService("CoreGui"))
-        local player = game:GetService("Players").LocalPlayer
-        if player and player:FindFirstChild("PlayerGui") then
-            pcall(setupDescendantListener, player.PlayerGui)
-        end
-        
+    end
+
+    -- 监听新增控件（移除task.wait(0.1)，避免翻译延迟）
+    local function setupListener(parent)
+        if typeof(parent) ~= "Instance" then return end
+        parent.DescendantAdded:Connect(function(descendant)
+            if descendant:IsA("TextLabel") or descendant:IsA("TextButton") or descendant:IsA("TextBox") then
+                pcall(function()
+                    local text = descendant.Text
+                    if text and text ~= "" then
+                        local transText = translateText(text)
+                        if transText ~= text then
+                            descendant.Text = transText
+                            translated[descendant] = true
+                        end
+                    end
+                end)
+            end
+        end)
+    end
+
+    -- 启动监听
+    pcall(setupListener, game:GetService("CoreGui"))
+    if LocalPlayer and LocalPlayer:FindFirstChild("PlayerGui") then
+        pcall(setupListener, LocalPlayer.PlayerGui)
+    end
+
+    -- 仅元表劫持失败时，才启动定时扫描（减少性能消耗）
+    if not metaSuccess then
         while true do
             scanAndTranslate()
             task.wait(3)
@@ -191,16 +209,14 @@ local function setupTranslationEngine()
     end
 end
 
+-- 延迟启动翻译引擎，确保游戏UI加载完成
 task.wait(2)
-
 setupTranslationEngine()
 
-local success, err = pcall(function()
---这下面填加载外部脚本
-loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
-
+-- 修复3：加载外部脚本增加超时容错（添加true参数启用缓存，减少加载失败概率）
+local loadSuccess, loadErr = pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua", true))()
 end)
-
-if not success then
-    warn("加载失败:", err)
+if not loadSuccess then
+    warn("加载失败:", loadErr)
 end
