@@ -1,0 +1,268 @@
+local Translations = {
+   --["这里填要替换的英文"] = "这里填中文",
+   -- 整合版Gec脚本汉化表（完整无遗漏）
+    -- 主标签页
+    ["Combat"] = "战斗",
+    ["Visuals"] = "视觉",
+    ["Player"] = "玩家",
+    ["Bring"] = "获取",
+    ["Auto"] = "自动",
+    ["Info"] = "信息",
+    ["Fun"] = "娱乐",
+    ["Settings"] = "设置",
+
+    -- 战斗标签页
+    ["Kill Aura"] = "杀戮光环",
+    ["Target Mobs"] = "目标生物",
+    ["Kill Aura Range"] = "杀戮光环范围",
+    ["Attack Speed"] = "攻击速度",
+    ["OP Features"] = "强力功能",
+    ["God Mode"] = "上帝模式",
+    ["This will make you immortal against damage and hunger ;D (Cant be Undone!)"] = "这会让你免疫伤害和饥饿；D（无法撤销！）",
+
+    -- 视觉标签页
+    ["Main Esp"] = "主要透视",
+    ["Player Esp"] = "玩家透视",
+    ["Chest ESP"] = "宝箱透视",
+    ["Mobs Esp"] = "生物透视",
+    ["Select Mobs"] = "选择生物",
+    ["Mob ESP"] = "生物透视",
+    ["Kids Section"] = "幼崽部分",
+    ["Teleport to Camp/Fire"] = "传送到营地/火堆",
+    ["Select Kids for ESP"] = "选择要透视的幼崽",
+    ["ESP Kids"] = "幼崽透视",
+    ["Teleport to Selected Kid"] = "传送到选中的幼崽",
+    ["Esp items"] = "物品透视",
+    ["Selecte Item Categorie"] = "选择物品类别",
+    ["Esp Items"] = "物品透视",
+
+    -- 移动相关
+    ["Movement"] = "移动",
+    ["Walk Speed"] = "行走速度",
+    ["Infinite Jump"] = "无限跳跃",
+    ["NoClip"] = "穿墙模式",
+    ["Flight"] = "飞行",
+    ["Fly"] = "飞行",
+    ["Only Works For Pc/Laptop"] = "仅适用于电脑/笔记本",
+    ["Fly Speed"] = "飞行速度",
+    ["Gravity"] = "重力",
+    ["Teleport Options"] = "传送选项",
+    ["Everything you can teleport!"] = "所有可传送的目标！",
+    ["Bring Selected"] = "获取选中目标",
+    ["Brings selected models in front of the player"] = "将选中的模型带到玩家面前",
+    ["Bunny Hop"] = "连跳",
+    ["Automatically hops while moving"] = "移动时自动跳跃",
+
+    -- 生存相关
+    ["Survival"] = "生存",
+    ["FullBright"] = "全亮度",
+    ["Auto Safe"] = "自动安全",
+    ["Health Threshold (%)"] = "生命阈值(%)",
+    ["Teleport Location"] = "传送位置",
+    ["Campfire"] = "营火",
+
+    -- 获取相关
+    ["Bring Amount"] = "获取数量",
+    ["Enter an Amount you want to bring (max 100)"] = "输入你想要获取的数量（最大100）",
+    ["Junk Items"] = "垃圾物品",
+    ["Junk"] = "垃圾",
+    ["Fuel Items"] = "燃料物品",
+    ["Fuel"] = "燃料",
+    ["Log, Coal,..."] = "原木、煤炭...",
+    ["Food / Heal Items"] = "食物/治疗物品",
+    ["Food / Heal"] = "食物/治疗",
+    ["Weapons / Tools"] = "武器/工具",
+    ["Melee Weapons"] = "近战武器",
+    ["Ranged Weapons"] = "远程武器",
+    ["Armor"] = "护甲",
+    ["Tools"] = "工具",
+    ["Other Items"] = "其他物品",
+
+    -- 自动标签页
+    ["Auto Campfire"] = "自动营火",
+    ["Select Fuel"] = "选择燃料",
+    ["Teleports fuel items to the fire if timer < 58:00"] = "当计时器小于58:00时，将燃料物品传送到火堆",
+    ["Auto Food"] = "自动进食",
+    ["Hunger Threshold"] = "饥饿阈值",
+    ["Select Food Item"] = "选择食物物品",
+    ["Carrot"] = "胡萝卜",
+    ["Auto WorkBench"] = "自动工作台",
+    ["Auto Scrap"] = "自动收集废料",
+    ["Automatically brings Scrap Items to the workbench."] = "自动将废料物品带到工作台。",
+    ["Auto Log"] = "自动收集原木",
+    ["Automatically brings logs to the workbench."] = "自动将原木带到工作台。",
+    ["Auto Base"] = "自动基地",
+    ["Radius"] = "半径",
+    ["Plants saplings in circles and continues exactly where you left off"] = "以圆圈方式种植树苗，并从您上次离开的位置继续",
+    ["Auto Chest"] = "自动箱子",
+    ["Bring Items to Base"] = "将物品带回基地",
+    ["Open Chests"] = "打开箱子",
+    ["Finds and opens chests once"] = "查找并打开箱子一次",
+    ["Load Map"] = "加载地图",
+    ["Stop Load Map"] = "停止加载地图",
+
+    -- 性能与界面
+    ["Open GEC"] = "打开GEC",
+    ["Performence"] = "性能",
+    ["Ultra Low Graphics"] = "超低画质",
+    ["Enable Ultra Low Graphics"] = "启用超低画质",
+    ["UI Configs"] = "界面配置",
+    ["UI Theme"] = "界面主题",
+    ["Dark"] = "深色",
+    ["UI Transparency"] = "界面透明度",
+    ["UI Toggle"] = "界面切换",
+    ["Enter the key you want to toggle the UI with"] = "输入您想用来切换界面的按键",
+
+    -- 生物名称
+    ["Polar Bear"] = "北极熊",
+    ["Alien"] = "外星人",
+    ["Alien Elite"] = "精英外星人",
+    ["Arctic Fox"] = "北极狐",
+    ["Scorpion"] = "蝎子",
+    ["Hellephant"] = "地狱象",
+    ["Meteor Crab"] = "陨石蟹",
+    ["Cultist King"] = "邪教徒之王",
+    ["Mammoth"] = "猛犸象",
+    ["Bunny"] = "兔子",
+    ["Horse"] = "马",
+    ["Cultist"] = "邪教徒",
+    ["Crossbow Cultist"] = "弩邪教徒",
+    ["Juggernaut Cultist"] = "主宰邪教徒",
+    ["Wolf"] = "狼",
+    ["Alpha Wolf"] = "阿尔法狼",
+    ["Bear"] = "熊",
+    ["Frog*"] = "青蛙*",
+    ["The Deer"] = "鹿",
+    ["Dino Kid"] = "恐龙幼崽",
+    ["Koala Kid"] = "考拉幼崽",
+    ["Kraken Kid"] = "海妖幼崽",
+    ["Squid Kid"] = "鱿鱼幼崽",
+
+    -- 物品类别
+    ["Gears"] = "装备",
+    ["燃料"] = "燃料",
+    ["工具"] = "工具",
+    ["Food"] = "食物",
+    ["Seeds"] = "种子",
+    ["Weapons"] = "武器",
+    ["护甲"] = "护甲",
+
+    -- 信息与社交
+    ["Infos ;D"] = "信息 ;D",
+    ["Join Discord"] = "加入Discord",
+    ["Click to copy the invite link and open it in your browser."] = "点击复制邀请链接并在浏览器中打开。"
+}
+
+local function translateText(text)
+    if not text or type(text) ~= "string" then return text end
+    
+    if Translations[text] then
+        return Translations[text]
+    end
+    
+    for en, cn in pairs(Translations) do
+        if text:find(en) then
+            return text:gsub(en, cn)
+        end
+    end
+    
+    return text
+end
+
+local function setupTranslationEngine()
+    local success, err = pcall(function()
+        local oldIndex = getrawmetatable(game).__newindex
+        setreadonly(getrawmetatable(game), false)
+        
+        getrawmetatable(game).__newindex = newcclosure(function(t, k, v)
+            if (t:IsA("TextLabel") or t:IsA("TextButton") or t:IsA("TextBox")) and k == "Text" then
+                v = translateText(tostring(v))
+            end
+            return oldIndex(t, k, v)
+        end)
+        
+        setreadonly(getrawmetatable(game), true)
+    end)
+    
+    if not success then
+        warn("元表劫持失败:", err)
+       
+        local translated = {}
+        local function scanAndTranslate()
+            for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
+                if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                    pcall(function()
+                        local text = gui.Text
+                        if text and text ~= "" then
+                            local translatedText = translateText(text)
+                            if translatedText ~= text then
+                                gui.Text = translatedText
+                                translated[gui] = true
+                            end
+                        end
+                    end)
+                end
+            end
+            
+            local player = game:GetService("Players").LocalPlayer
+            if player and player:FindFirstChild("PlayerGui") then
+                for _, gui in ipairs(player.PlayerGui:GetDescendants()) do
+                    if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                        pcall(function()
+                            local text = gui.Text
+                            if text and text ~= "" then
+                                local translatedText = translateText(text)
+                                if translatedText ~= text then
+                                    gui.Text = translatedText
+                                    translated[gui] = true
+                                end
+                            end
+                        end)
+                    end
+                end
+            end
+        end
+        
+        local function setupDescendantListener(parent)
+            parent.DescendantAdded:Connect(function(descendant)
+                if descendant:IsA("TextLabel") or descendant:IsA("TextButton") or descendant:IsA("TextBox") then
+                    task.wait(0.1)
+                    pcall(function()
+                        local text = descendant.Text
+                        if text and text ~= "" then
+                            local translatedText = translateText(text)
+                            if translatedText ~= text then
+                                descendant.Text = translatedText
+                            end
+                        end
+                    end)
+                end
+            end)
+        end
+        
+        pcall(setupDescendantListener, game:GetService("CoreGui"))
+        local player = game:GetService("Players").LocalPlayer
+        if player and player:FindFirstChild("PlayerGui") then
+            pcall(setupDescendantListener, player.PlayerGui)
+        end
+        
+        while true do
+            scanAndTranslate()
+            task.wait(3)
+        end
+    end
+end
+
+task.wait(2)
+
+setupTranslationEngine()
+
+local success, err = pcall(function()
+--这下面填加载外部脚本
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GEC0/gec/refs/heads/main/Gec.Loader", true))()
+
+end)
+
+if not success then
+    warn("加载失败:", err)
+end
