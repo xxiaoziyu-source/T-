@@ -1,0 +1,310 @@
+local Translations = {
+    ["Volcano Hub (Version Main) Update Fix Bug;"] = "火山枢纽（主版本）更新修复漏洞；",
+    ["Update Log"] = "更新日志",
+    ["Status Sever"] = "服务器状态",
+    ["Main"] = "主功能",
+    ["Dojo Quest"] = "道场任务",
+    ["Settings"] = "设置",
+    ["Sub"] = "子功能",
+    ["Shop"] = "商店",
+    ["Traveling"] = "旅行",
+    ["Sea Event"] = "海上事件",
+    ["Dungeon"] = "地下城",
+    ["Interface"] = "界面",
+    ["Theme"] = "主题",
+    ["Changes the interface theme."] = "更改界面主题。",
+    ["Viow Flat"] = "视图平面（疑似拼写错误，应为View Flat）",
+    ["Transparency"] = "透明度",
+    ["Makes the interface transparent."] = "使界面透明。",
+    ["Minimize Bind"] = "最小化绑定",
+    ["End"] = "结束",
+    ["Configuration"] = "配置",
+    ["Config name"] = "配置名称",
+    ["Config list"] = "配置列表",
+    ["Create config"] = "创建配置",
+    ["Load config"] = "加载配置",
+    ["Vynixu"] = "Vynixu（主题名，保留原名）",
+    ["Dark"] = "深色",
+    ["Darker"] = "更深色",
+    ["Light"] = "浅色",
+    ["Quiet Light"] = "柔和浅色",
+    ["Aqua"] = "水色",
+    ["Tomorrow Night Blue"] = "明日夜蓝",
+    ["Abyss"] = "深渊",
+    ["Amethyst"] = "紫水晶",
+    ["Amethyst Dark"] = "深紫水晶",
+    ["Rose"] = "玫瑰",
+    ["Overwrite config"] = "覆盖配置",
+    ["Refresh list"] = "刷新列表",
+    ["Set as autoload"] = "设为自动加载",
+    ["Current autoload config: none"] = "当前自动加载配置：无",
+    ["Prehistoric Islands Status"] = "史前岛屿状态",
+    ["Prehistoric Island: Not Spawn"] = "史前岛屿：未生成",
+    ["Status"] = "状态",
+    ["Cake Prince Status: 500 Remaining"] = "蛋糕王子状态：剩余500",
+    ["Fruit Distance Info"] = "恶魔果实距离信息",
+    ["Number of fruits in server: 0"] = "服务器内恶魔果实数量：0",
+    ["Elite Hunter Information"] = "精英猎人信息",
+    ["Elite Status: Not Have Elite | Killed: nil"] = "精英状态：无精英 | 已击杀：无",
+    ["Elite Hunter Name: Unknown"] = "精英猎人名称：未知",
+    ["Dojo Quest Belt Info"] = "道场任务腰带信息",
+    ["Progress: Get Dojo Belt (White)"] = "进度：获取道场白腰带",
+    ["Guide: Kill 20 NPCs on Quest using Auto Farm Level."] = "指南：使用自动升级击杀20个任务NPC。",
+    ["Copy Discord Servers"] = "复制Discord服务器",
+    ["Hop Sever Low Players"] = "跳转到低玩家数服务器",
+    ["Weapon"] = "武器",
+    ["Melee"] = "近战",
+    ["Sword"] = "剑",
+    ["Gun"] = "枪",
+    ["Fruit"] = "果实",
+    ["Auto Farm Level"] = "自动升级",
+    ["Auto Attack Nearest Enemy"] = "自动攻击最近敌人",
+    ["Auto Farm Bone"] = "自动刷骨头",
+    ["Auto Farm Katakuri"] = "自动刷卡塔库栗",
+    ["Auto Farm Mob On Cake Island, if there is a boss, it will automatically Teleport to kill it."] = "在蛋糕岛自动刷怪，若有boss则自动传送击杀。",
+    ["Mastery Farm"] = "熟练度刷取",
+    ["Kill AT Hp%"] = "生命值百分比击杀",
+    ["Custom HP Enemies Settings"] = "自定义敌人生命值设置",
+    ["Type Mastery"] = "熟练度类型",
+    ["Nearest"] = "最近",
+    ["Auto Farm Mastery Fruit"] = "自动刷熟练度果实（测试版）",
+    ["Farm Chest"] = "刷宝箱",
+    ["Stop If Have Legendary Item"] = "获得传奇物品时停止",
+    ["Auto Farm Chest"] = "自动刷宝箱",
+    ["Change Race Draco Work when in Sea3"] = "在第三海域时切换龙族",
+    ["Delay Use Skill"] = "技能使用延迟",
+    ["Auto Destroyed Tree"] = "自动摧毁树木",
+    ["Only Applies To Hydra Islands"] = "仅适用于九头蛇岛屿",
+    ["Quest Dragon Hunter + Dragon Talon"] = "龙猎人+龙爪任务",
+    ["Auto Farm Mob Hydra Islands"] = "在九头蛇岛屿自动刷怪",
+    ["Attack Mob to Collect Fire Blaze Ember"] = "攻击怪物以收集火焰余烬",
+    ["Teleport To NPC Dragon Hunter"] = "传送到龙猎人NPC处",
+    ["Auto updated Dragon Talon"] = "自动更新龙爪",
+    ["Auto Collect Fire Blaze Ember"] = "自动收集火焰余烬",
+    ["Auto Collect Fire Flowers"] = "自动收集火焰花",
+    ["Belt"] = "腰带",
+    ["Auto Complete Belt White"] = "自动完成白腰带",
+    ["Auto Complete Purle Belt"] = "自动完成紫腰带（疑似拼写错误，应为Purple）",
+    ["Settings Dojo"] = "道场设置",
+    ["Use Skill Sword"] = "使用剑技能",
+    ["Use Skill Melee"] = "使用近战技能",
+    ["Stop Tween"] = "停止动画",
+    ["Distance"] = "距离",
+    ["Distance Islands Teleport"] = "岛屿传送距离",
+    ["Turn On Haki Busso"] = "开启武装色霸气",
+    ["Bring Mob"] = "吸引怪物",
+    ["Settings Mastery"] = "熟练度设置",
+    ["Hold Skill Z"] = "按住技能Z",
+    ["Hold Skill X"] = "按住技能X",
+    ["Hold Skill C"] = "按住技能C",
+    ["Hold Skill V"] = "按住技能V",
+    ["Hold Skill F"] = "按住技能F",
+    ["Turn On Skill Z"] = "开启技能Z",
+    ["Turn On Skill X"] = "开启技能X",
+    ["Turn On Skill C"] = "开启技能C",
+    ["Turn On Skill V"] = "开启技能V",
+    ["Turn On Skill F"] = "开启技能F",
+    ["Setttings Farm"] = "刷取设置（疑似拼写错误，应为Settings Farm）",
+    ["Spin Pos When Farm"] = "刷取时旋转位置",
+    ["Auto Clicker"] = "自动点击器",
+    ["Auto Turn On Awakening"] = "自动开启觉醒",
+    ["Auto Turn On V3"] = "自动开启V3",
+    ["Walk On Water"] = "水上行走",
+    ["Anti Band"] = "防封禁",
+    ["Auto Get Cavander Sword"] = "自动获取卡万德剑",
+    ["Auto Farm Elite Hunter"] = "自动刷精英猎人",
+    ["Auto Get Tushita"] = "自动获取秋水",
+    ["Auto Get Yama"] = "自动获取山治刀",
+    ["first you have to kill 30 elites hunter"] = "首先你必须击杀30个精英猎人",
+    ["Auto Holy Torch"] = "自动获取神圣火炬",
+    ["Need Spawm Rip_Indra"] = "需要生成 Rip_Indra",
+    ["Auto Get Twin Hooks"] = "自动获取双钩",
+    ["Auto Random Bone"] = "自动随机骨头",
+    ["Buy Black Leg [$150,000]"] = "购买黑足 [$150,000]",
+    ["Buy Electro [$550,000]"] = "购买电击 [$550,000]",
+    ["Buy Water Kung Fu [$750,000]"] = "购买水 kung fu [$750,000]",
+    ["Buy Dragon Claw [Æ'1,500]"] = "购买龙爪 [Æ'1,500]",
+    ["Buy Superhuman [$3,000,000]"] = "购买超人 [$3,000,000]",
+    ["Buy Death Step [Æ'5,000 $5,000,000]"] = "购买死亡步伐 [Æ'5,000 $5,000,000]",
+    ["Buy Sharkman Karate [Æ'5,000 $2,500,000]"] = "购买鲨鱼人空手道 [Æ'5,000 $2,500,000]",
+    ["Buy Electric Claw [Æ'5,000 $3,000,000]"] = "购买电爪 [Æ'5,000 $3,000,000]",
+    ["Buy Dragon Talon [Æ'5,000 $3,000,000]"] = "购买龙爪 [Æ'5,000 $3,000,000]",
+    ["Buy God Human [Æ'5,000 $5,000,000]"] = "购买神人 [Æ'5,000 $5,000,000]",
+    ["Buy Sanguine Art [Æ'5,000 $5,000,000]"] = "购买 sanguine 艺术 [Æ'5,000 $5,000,000]",
+    ["Random Fruit [$]"] = "随机果实 [$]",
+    ["Sword Buy"] = "剑购买",
+    ["Katana [$1,000]"] = "武士刀 [$1,000]",
+    ["Iron Mace [$25,000]"] = "铁杖 [$25,000]",
+    ["Dual Katana [$12,000]"] = "双武士刀 [$12,000]",
+    ["Triple Katana [$60,000]"] = "三武士刀 [$60,000]",
+    ["Pipe [$100,000]"] = "烟斗 [$100,000]",
+    ["Dual-Headed Blade [$400,000]"] = "双头 blade [$400,000]",
+    ["Bisento [$1,200,000]"] = "Bisento [$1,200,000]",
+    ["Soul Cane [$750,000]"] = "灵魂手杖 [$750,000]",
+    ["Pole v.2 [Æ'5,000]"] = "长杆 v.2 [Æ'5,000]",
+    ["Slingshot [$5,000]"] = "弹弓 [$5,000]",
+    ["Musket [$8,000]"] = "步枪 [$8,000]",
+    ["Flintlock [$10,500]"] = "燧发枪 [$10,500]",
+    ["Refined Slingshot [$30,000]"] = "精制弹弓 [$30,000]",
+    ["Refined Flintlock [$65,000]"] = "精制燧发枪 [$65,000]",
+    ["Cannon [$100,000]"] = "加农炮 [$100,000]",
+    ["Kabucha [Æ'1,500]"] = "Kabucha [Æ'1,500]",
+    ["Bizarre Rifle [250 Ectoplasm]"] = "奇异步枪 [250 灵质]",
+    ["Reset Stats [Use Æ'2,500]"] = "重置属性 [使用 Æ'2,500]",
+    ["Random Race [Use Æ'3,000]"] = "随机种族 [使用 Æ'3,000]",
+    ["Black Cape [$50,000]"] = "黑斗篷 [$50,000]",
+    ["Swordsman Hat [$150,000]"] = "剑士帽 [$150,000]",
+    ["Tomoe Ring [$500,000]"] = "巴卫戒指 [$500,000]",
+    ["Travel to Sea 1"] = "前往第一海域",
+    ["Travel to Sea 2"] = "前往第二海域",
+    ["Travel to Sea 3"] = "前往第三海域",
+    ["Select Islands"] = "选择岛屿",
+    ["Wind Mill"] = "风车岛",
+    ["Teleport to selected islands"] = "传送到所选岛屿",
+    ["Health 100/100"] = "生命值 100/100",
+    ["能量100/100"] = "能量100/100",
+    ["战斗"] = "战斗",
+    ["安全区-PvP已禁用"] = "安全区-PvP已禁用",
+    ["Note: Beta so there are still some errors, please understand We will try to fix the existing errors."] = "注意：测试版因此仍存在一些错误，请谅解 我们将尝试修复现有错误。",
+    ["Remove"] = "移除",
+    ["Remove Fog"] = "移除雾",
+    ["Remove Lava"] = "移除 lava",
+    ["Teleport To Tiki"] = "传送到 Tiki",
+    ["Prehistoric Islands"] = "史前岛屿",
+    ["Craft Volcanic Magnet"] = "制作火山磁铁",
+    ["Teleport To Prehistoric Island"] = "传送到史前岛屿",
+    ["Auto Find Prehistoric Island"] = "自动寻找史前岛屿",
+    ["How To Use First Buy Boat And Sit On Boat Then Turn On This Toggle"] = "使用方法：先购买船并坐在船上，然后开启此开关",
+    ["Auto Patch Volcano Core"] = "自动修补火山核心",
+    ["Auto Kill Lava Golem"] = "自动击杀 lava 魔像",
+    ["Kill Aura"] = "击杀光环",
+    ["khuyến cáo không nên dùng trong raid hoặc đảo núi lửa:)"] = "建议不要在突袭或火山岛使用:)",
+    ["Collect Items"] = "收集物品",
+    ["Collect Dino Bone"] = "收集恐龙骨",
+    ["Collect Dragon Egg"] = "收集龙蛋",
+    ["Use Melee"] = "使用近战",
+    ["Use Sword"] = "使用剑",
+    ["Use Gun"] = "使用枪",
+    ["Select Raid"] = "选择突袭",
+    ["Flame"] = "火焰",
+    ["Auto Buy Chip Selected Normal"] = "自动购买所选普通芯片",
+    ["Start Raid"] = "开始突袭",
+    ["Auto Buy (Special) Microchip"] = "自动购买（特殊）微芯片",
+    ["Auto Next Islands"] = "自动前往下一个岛屿",
+    ["Auto Awakener"] = "自动觉醒",
+    ["Press End to toggle the interface."] = "按 End 键切换界面。"
+}
+
+local function translateText(text)
+    if not text or type(text) ~= "string" then return text end
+    
+    if Translations[text] then
+        return Translations[text]
+    end
+    
+    for en, cn in pairs(Translations) do
+        if text:find(en) then
+            return text:gsub(en, cn)
+        end
+    end
+    
+    return text
+end
+
+local function setupTranslationEngine()
+    local success, err = pcall(function()
+        local oldIndex = getrawmetatable(game).__newindex
+        setreadonly(getrawmetatable(game), false)
+        
+        getrawmetatable(game).__newindex = newcclosure(function(t, k, v)
+            if (t:IsA("TextLabel") or t:IsA("TextButton") or t:IsA("TextBox")) and k == "Text" then
+                v = translateText(tostring(v))
+            end
+            return oldIndex(t, k, v)
+        end)
+        
+        setreadonly(getrawmetatable(game), true)
+    end)
+    
+    if not success then
+        warn("元表劫持失败:", err)
+       
+        local translated = {}
+        local function scanAndTranslate()
+            for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
+                if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                    pcall(function()
+                        local text = gui.Text
+                        if text and text ~= "" then
+                            local translatedText = translateText(text)
+                            if translatedText ~= text then
+                                gui.Text = translatedText
+                                translated[gui] = true
+                            end
+                        end
+                    end)
+                end
+            end
+            
+            local player = game:GetService("Players").LocalPlayer
+            if player and player:FindFirstChild("PlayerGui") then
+                for _, gui in ipairs(player.PlayerGui:GetDescendants()) do
+                    if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                        pcall(function()
+                            local text = gui.Text
+                            if text and text ~= "" then
+                                local translatedText = translateText(text)
+                                if translatedText ~= text then
+                                    gui.Text = translatedText
+                                    translated[gui] = true
+                                end
+                            end
+                        end)
+                    end
+                end
+            end
+        end
+        
+        local function setupDescendantListener(parent)
+            parent.DescendantAdded:Connect(function(descendant)
+                if descendant:IsA("TextLabel") or descendant:IsA("TextButton") or descendant:IsA("TextBox") then
+                    task.wait(0.1)
+                    pcall(function()
+                        local text = descendant.Text
+                        if text and text ~= "" then
+                            local translatedText = translateText(text)
+                            if translatedText ~= text then
+                                descendant.Text = translatedText
+                            end
+                        end
+                    end)
+                end
+            end)
+        end
+        
+        pcall(setupDescendantListener, game:GetService("CoreGui"))
+        local player = game:GetService("Players").LocalPlayer
+        if player and player:FindFirstChild("PlayerGui") then
+            pcall(setupDescendantListener, player.PlayerGui)
+        end
+        
+        while true do
+            scanAndTranslate()
+            task.wait(3)
+        end
+    end
+end
+
+task.wait(2)
+
+setupTranslationEngine()
+
+local success, err = pcall(function()
+--这下面填加载外部脚本
+loadstring(game:HttpGet("https://raw.githubusercontent.com/wpisstestfprg/Volcano/refs/heads/main/VolcanoNewUpdated.luau"))()
+
+end)
+
+if not success then
+    warn("加载失败:", err)
+end
